@@ -28,18 +28,21 @@ class Main extends PluginBase implements Listener
     {
         $this->getLogger()->info("BroadCaster Disabled");
     }
+
     public function onJoin(PlayerJoinEvent $event)
     {
         $player = $event->getPlayer();
         $name = $player->getName();
         $event->setJoinMessage(TF::GREEN . "$name Has Joined the Server!");
     }
+
     public function onQuit(PlayerQuitEvent $event)
     {
         $player = $event->getPlayer();
         $name = $player->getName();
         $event->setQuitMessage(TF::RED . "$name Has Quit the Server!");
     }
+
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
     {
         if ($cmd->getName() === "broadcast") {
@@ -48,7 +51,7 @@ class Main extends PluginBase implements Listener
             } else {
                 if (isset($args[0])) {
                     $msg = implode(" ", $args);
-                    $this->getServer()->broadcastMessage(  TF::DARK_PURPLE . "BroadCast => " . TF::AQUA . $msg);
+                    $this->getServer()->broadcastMessage(TF::DARK_PURPLE . TF::BOLD .  "BroadCast => ". TF::RESET . TF::AQUA . $msg);
                     $sender->sendMessage(TF::AQUA . "BroadCast was Sent!");
                 } else {
                     $sender->sendMessage(TF::RED . "Usage: /broadcast, /bc {Your Message}");
