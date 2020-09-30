@@ -5,6 +5,9 @@ version: 1.0
 main: imwood04\Main
 website: https://nagames.herokuapp.com , https://github.com/imwood04
 commands:
+  oof:
+    description: Says "Get OOFED on..."
+    permission: imwood04.oof
   broadcast:
     description: Sends BroadCast.
     permission: imwood04.bc
@@ -12,6 +15,9 @@ commands:
       - bc
 
 permissions:
+  imwood04.oof:
+    description: Gives perms to use /oof
+    default: op
   broadcast.cmd:
     description: Allows Use of /broadcast or /bc.
     default: op
