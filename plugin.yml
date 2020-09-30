@@ -3,3 +3,15 @@ author: imwood04
 api: [3.0.0]
 version: 1.0
 main: imwood04\Main
+website: https://nagames.herokuapp.com , https://github.com/imwood04
+commands:
+  broadcast:
+    description: Sends BroadCast.
+    permission: imwood04.bc
+    aliases:
+      - bc
+
+permissions:
+  broadcast.cmd:
+    description: Allows Use of /broadcast or /bc.
+    default: op
