@@ -15,18 +15,18 @@ class Main extends PluginBase implements Listener
 
     public function onLoad()
     {
-        $this->getLogger()->info("BroadCast Plugin Loading");
+        $this->getLogger()->info("BroadCaster Loading");
     }
 
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("BroadCast Enabled!");
+        $this->getLogger()->info("BroadCaster Enabled!");
     }
 
     public function onDisable()
     {
-        $this->getLogger()->info("BroadCast Disabled");
+        $this->getLogger()->info("BroadCaster Disabled");
     }
 
     public function onJoin(PlayerJoinEvent $event)
@@ -53,9 +53,9 @@ class Main extends PluginBase implements Listener
                 $sender->sendMessage(TF::RED . "No Perms!");
             } else {
                 if (isset($args[0])) {
-                    $msg = implode(" ", $args);
+                    $msg = implode("BroadCast", $args);
                     $this->getServer()->broadcastMessage(TF::AQUA . $msg);
-                    $sender->sendMessage(TF::AQUA . "BroadCast" . $msg . "=>");
+                    $sender->sendMessage(TF::AQUA . "BroadCast=> " . $msg . "");
                 } else {
                     $sender->sendMessage(TF::RED . "Usage: /broadcast {Your Message}, /bc {Your Message}");
                 }
