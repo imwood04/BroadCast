@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener
         $name = $player->getName();
         $event->setQuitMessage(TF::RED . "$name Has Quit the Server!");
     }
-
+    //all commands in this function
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
     {
         if ($cmd->getName() === "broadcast") {
