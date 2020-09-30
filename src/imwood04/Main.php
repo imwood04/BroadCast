@@ -58,6 +58,13 @@ class Main extends PluginBase implements Listener
                 }
             }
         }
+        if ($cmd->getName() === "oof") {
+            if (!$sender->hasPermission("imwood04.oof")){
+                $sender->sendMessage(TF::BOLD . TF::BLACK . "Get OOFED on...");
+            } else {
+                $sender->sendMessage(TF::RED . "You don't have Perms to use this!");
+            }
+        }
         return true;
     }
 }
