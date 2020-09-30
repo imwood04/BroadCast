@@ -55,7 +55,7 @@ class Main extends PluginBase implements Listener
                 if (isset($args[0])) {
                     $msg = implode("BroadCast", $args);
                     $this->getServer()->broadcastMessage(TF::AQUA . $msg);
-                    $sender->sendMessage(TF::AQUA . "BroadCast=> " . $msg . " ");
+                    $sender->sendMessage(TF::AQUA . "BroadCast => " . $msg . " ");
                 } else {
                     $sender->sendMessage(TF::RED . "Usage: /broadcast {Your Message}, /bc {Your Message}");
                 }
