@@ -1,2 +1,4 @@
-# BroadCast
-Just another one of the simple boradcast plugins for pmmp
+# BroadCaster
+Features
+- Join Welcoming and Leaving
+- /broadcast or /bc (Broadcast messages)
