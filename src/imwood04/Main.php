@@ -47,11 +47,11 @@ class Main extends PluginBase implements Listener
                 $sender->sendMessage(TF::RED . "No Perms!");
             } else {
                 if (isset($args[0])) {
-                    $msg = implode("BroadCast", $args);
+                    $msg = implode(" ", $args);
                     $this->getServer()->broadcastMessage(  TF::DARK_PURPLE . "BroadCast => " . TF::AQUA . $msg);
                     $sender->sendMessage(TF::AQUA . "BroadCast was Sent!");
                 } else {
-                    $sender->sendMessage(TF::RED . "Usage: /broadcast {Your Message}, /bc {Your Message}");
+                    $sender->sendMessage(TF::RED . "Usage: /broadcast, /bc {Your Message}");
                 }
             }
         }
