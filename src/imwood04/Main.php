@@ -28,15 +28,18 @@ class Main extends PluginBase implements Listener
     {
         $this->getLogger()->info("BroadCaster Disabled");
     }
-
     public function onJoin(PlayerJoinEvent $event)
     {
         $player = $event->getPlayer();
         $name = $player->getName();
         $event->setJoinMessage(TF::GREEN . "$name Has Joined the Server!");
+    }
+    public function onQuit(PlayerQuitEvent $event)
+    {
+        $player = $event->getPlayer();
+        $name = $player->getName();
         $event->setQuitMessage(TF::RED . "$name Has Quit the Server!");
     }
-
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
     {
         if ($cmd->getName() === "broadcast") {
