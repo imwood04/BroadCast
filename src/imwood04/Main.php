@@ -31,19 +31,10 @@ class Main extends PluginBase implements Listener
 
     public function onJoin(PlayerJoinEvent $event)
     {
-        $event->setJoinMessage("");
         $player = $event->getPlayer();
         $name = $player->getName();
-        $this->getServer()->broadcastMessage(TF::GREEN . "$name Has Joined the Server!");
-    }
-
-    public function onQuit(PlayerQuitEvent $event)
-    {
-        $event->setQuitMessage("");
-        $player = $event->getPlayer();
-        $name = $player->getName();
-        $this->getServer()->broadcastMessage(TF::RED . "$name Has Quit the Server!");
-
+        $event->setJoinMessage(TF::GREEN . "$name Has Joined the Server!");
+        $event->setQuitMessage(TF::RED . "$name Has Quit the Server!");
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
