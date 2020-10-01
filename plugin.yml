@@ -5,6 +5,9 @@ version: 1.0
 main: imwood04\Main
 website: https://nagames.herokuapp.com , https://github.com/imwood04
 commands:
+  fly:
+    description: Allows youto fly
+    permission: imwood04.fly
   oof:
     description: Says "Get OOFED on..."
     permission: imwood04.oof
@@ -15,6 +18,9 @@ commands:
       - bc
 
 permissions:
+  imwood04.fly:
+    description: Gives perms to use /fly
+    default: op
   imwood04.oof:
     description: Gives perms to use /oof
     default: op
