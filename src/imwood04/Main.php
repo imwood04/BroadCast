@@ -66,25 +66,18 @@ class Main extends PluginBase implements Listener
                 $sender->sendMessage(TF::DARK_GREEN . "Get OOFED on...");
             }
         }
-        if(!($cmd->getName()) == "fly"){
-
+        if(!($cmd->getName()) == "fly") {
             if(!($sender instanceof Player)){
-                return true;
-            }
-
-            if(!$cmd->testPermission($sender)){
-                return true;
-            }
-
-            if (!$sender->getAllowFlight()){
-                $sender->setAllowFlight(true);
-                $sender->sendMessage(TF::GREEN."Your flight has been enabled");
-            } else {
-                $sender->setAllowFlight(false);
-                $sender->setFlying(false);
-                $sender->sendMessage(TF::RED."Your flight has been disabled!");
+                if (!$sender->hasPermission("imwood04.fly")){
+                    $sender->setAllowFlight(true);
+                    $sender->sendMessage(TF::GREEN."Your flight has been enabled");
+                } else {
+                    $sender->setAllowFlight(false);
+                    $sender->setFlying(false);
+                    $sender->sendMessage(TF::RED."Your flight has been disabled!");
+                }
+                }
+            return false;
             }
         }
-        return false;
-    }
 }
