@@ -2,7 +2,6 @@
 
 namespace imwood04;
 
-use pocketmine\Player;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
@@ -66,19 +65,6 @@ class Main extends PluginBase implements Listener
                 $sender->sendMessage(TF::DARK_GREEN . "Get OOFED on...");
             }
         }
-        if(!($cmd->getName()) == "fly") {
-            if(!($sender instanceof Player)){
-                if (!$sender->hasPermission("imwood04.fly")){
-                    $sender->setAllowFlight(true);
-                    $sender->sendMessage(TF::GREEN."Your flight has been enabled");
-                } else {
-                    $sender->setAllowFlight(false);
-                    $sender->setFlying(false);
-                    $sender->sendMessage(TF::RED."Your flight has been disabled!");
-                }
-                }
-            return false;
-            }
         return true;
         }
 }
